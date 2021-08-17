@@ -35,7 +35,7 @@ $endif$
 $for(classoption)$
   $classoption$$sep$,
 $endfor$
-]{$documentclass$}
+]{scrartcl}
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
@@ -451,6 +451,49 @@ $if(logo)$
 \logo{\includegraphics{$logo$}}
 $endif$
 $endif$
+
+% =============================================================
+% begin own customization
+
+% turn off numbering of everything below section
+\setcounter{secnumdepth}{\sectionnumdepth}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage[babelshorthands=true]{german}
+
+\setromanfont{IBMPlexSerif}[
+    Extension = .otf,
+    Ligatures=TeX,
+    UprightFont=*-Text,
+    BoldFont=*-SemiBold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-SemiBoldItalic,
+    FontFace = {l}{n}{*-Light},
+    FontFace = {l}{it}{*-LightItalic}
+    ]
+
+\setsansfont{IBMPlexSans}[
+    Extension = .otf,
+    Ligatures=TeX,
+    UprightFont=*-Regular,
+    BoldFont=*-Medium,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-MediumItalic,
+    FontFace = {l}{n}{*-Light},
+    FontFace = {l}{it}{*-LightItalic},
+    ]
+\DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+\DeclareRobustCommand{\ltseries}{\fontseries{l}\selectfont}
+\DeclareTextFontCommand{\textlt}{\ltseries}
+
+\setkomafont{disposition}{\ltseries}
+\renewcommand*{\familydefault}{\sfdefault}
+
+% end own customization
+% =============================================================
 
 \begin{document}
 $if(has-frontmatter)$
