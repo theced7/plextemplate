@@ -1,0 +1,4 @@
+name: Plex Template
+description: >
+   This is a rmarkdown pdf template which uses KOMA script and IBM's Plex font
+create_dir: FALSE
