@@ -1,8 +1,13 @@
 ---
 title: "Template Title"
 author: "Your Name"
-date: "The Date"
-output: output_format
+date: \today
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    keep_tex: true
+    template: template.tex
+fontsize: 12pt
 ---
 
 ```{r setup, include=FALSE}
